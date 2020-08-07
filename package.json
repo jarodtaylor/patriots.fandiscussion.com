@@ -15,10 +15,15 @@
   },
   "dependencies": {
     "gatsby": "^2.23.12",
+    "gatsby-source-contentful": "^2.3.32",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "@contentful/rich-text-react-renderer": "^14.1.1",
+    "@contentful/rich-text-types": "^14.1.1",
+    "gatsby-transformer-remark": "^2.8.27",
+    "lodash": "^4.17.19",
     "prettier": "2.0.5"
   },
   "repository": {
