@@ -22,9 +22,13 @@
   "devDependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.1",
     "@contentful/rich-text-types": "^14.1.1",
+    "autoprefixer": "^9.8.6",
+    "gatsby-plugin-postcss": "^2.3.11",
     "gatsby-transformer-remark": "^2.8.27",
     "lodash": "^4.17.19",
-    "prettier": "2.0.5"
+    "postcss-import": "^12.0.1",
+    "prettier": "2.0.5",
+    "tailwindcss": "^1.6.2"
   },
   "repository": {
     "type": "git",

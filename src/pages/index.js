@@ -13,6 +13,7 @@ class Home extends React.Component {
     return (
       <>
         <h1>{article.title}</h1>
+        <a href="//google.com" className="btn">Testing Button</a>
         <RichText content={article} />
       </>
     )

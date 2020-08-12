@@ -33,5 +33,6 @@ module.exports = {
         downloadLocal: true,
       },
     },
+    `gatsby-plugin-postcss`,
   ],
 }
