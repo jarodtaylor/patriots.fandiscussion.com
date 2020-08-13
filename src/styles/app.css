@@ -2,5 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import "./normalize.css";
+@import "./document.css";
 @import "../components/RichText.css";
-
+@import "../components/PageNav.css";

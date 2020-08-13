@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "nep";
+  src: url("../assets/fonts/nflpatri-webfont.woff2") format("woff2"),
+    url("../assets/fonts/nflpatri-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/robotocondensed-bold.woff2") format("woff2"),
+    url("../assets/fonts/robotocondensed-bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../assets/fandiscussion-bg.svg);
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #00295b;
+  overscroll-behavior: none;
+}
+
+body:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background-color: #00295b;
+  opacity: 0.9;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  color: #564dc1;
+}

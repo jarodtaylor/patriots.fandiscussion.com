@@ -1,0 +1,9 @@
+.page-nav {
+  @apply w-full flex sticky top-0;
+  background: rgb(0, 41, 91);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.page-nav__item {
+  @apply h-12 border-0 border-l border-white border-solid border-opacity-25 block bg-transparent text-base flex-1 text-white -ml-px;
+}
