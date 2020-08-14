@@ -7,3 +7,11 @@
 .page-nav__item {
   @apply h-12 border-0 border-l border-white border-solid border-opacity-25 block bg-transparent text-base flex-1 text-white -ml-px;
 }
+
+.page-nav__item svg {
+  opacity: 0.25;
+}
+
+.page-nav__item--active svg {
+  opacity: 1;
+}
