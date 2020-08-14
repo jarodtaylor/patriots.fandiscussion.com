@@ -23,6 +23,12 @@ const MainContent = ({ data }) => {
       <article>
         <RichText content={richTextContent} />
       </article>
+      <article>
+        <h2>Discussion</h2>
+      </article>
+      <aside>
+        <h2>Twitter</h2>
+      </aside>
     </main>
   )
 }
