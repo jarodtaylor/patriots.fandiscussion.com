@@ -52,10 +52,10 @@ const AuthorCard = ({ author }) => {
   ]
 
   return (
-    <article className="flex flex-wrap justify-center bg-gray-200 py-6 px-8 -ml-4 -mr-4 lg:rounded">
+    <article className="flex flex-wrap justify-center bg-gray-200 py-6 px-8 -ml-4 -mr-4 lg:rounded lg:mx-0">
       <div className="flex flex-wrap justify-center w-full">
         <img
-          className="rounded-full w-20 lg:w-32"
+          className="rounded-full w-20 h-20 lg:w-32 lg:h-32"
           src={photo.file.url}
           alt={photo.title}
         />

@@ -12,6 +12,7 @@ const MainContent = ({ data }) => {
 
   const handleClick = index => {
     setActivePageModule(index)
+    console.log(index)
   }
 
   return (
@@ -21,18 +22,30 @@ const MainContent = ({ data }) => {
     >
       <PageNav {...{ activePageModule, handleClick }} />
       <div className="py-6 px-4 lg:grid lg:grid-cols-9 lg:grid-rows-2 lg:gap-16">
-        <section className="lg:col-span-6">
+        <section
+          className={`lg:col-span-6 ${
+            activePageModule === 0 ? "block" : "hidden"
+          } lg:block`}
+        >
           <Article data={latestArticle} />
         </section>
-        <section className="lg:col-span-6">
+        <section
+          className={`lg:col-span-6 ${
+            activePageModule === 1 ? "block" : "hidden"
+          } lg:block`}
+        >
           <article>
-            <h3>Discussion</h3>
+            <h3 className="text-3xl mb-4">Discussion</h3>
             <Comments title={latestArticle.title} />
           </article>
         </section>
-        <aside className="lg:col-start-7 lg:col-end-10 lg:row-start-1 lg:row-end-3">
+        <aside
+          className={`lg:col-start-7 lg:col-end-10 lg:row-start-1 lg:row-end-3 ${
+            activePageModule === 2 ? "block" : "hidden"
+          } lg:block`}
+        >
           <article className="lg:sticky lg:top-0 lg:overflow-scroll lg:h-90vh">
-            <h3 className="text-2xl">Twitter</h3>
+            <h3 className="text-3xl mb-4">Twitter</h3>
             <TwitterFeed />
           </article>
         </aside>
