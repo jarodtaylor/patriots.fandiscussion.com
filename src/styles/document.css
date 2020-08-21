@@ -25,6 +25,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #00295b;
   overscroll-behavior: none;
+  line-height: 1.5;
 }
 
 body:before {

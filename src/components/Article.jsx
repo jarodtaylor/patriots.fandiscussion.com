@@ -15,16 +15,16 @@ const Article = ({ data }) => {
       <h1 className="text-3xl mb-4 xl:text-4xl">{article.title}</h1>
       <div className="flex pb-5 items-center justify-between">
         <div className="flex items-center">
-          <div className="w-6 mr-2">
+          <div className="w-6 mr-2 lg:w-10">
             <img
               className="rounded-full"
               src={authorPhoto.file.url}
               alt={authorPhoto.title}
             />
           </div>
-          <span className="text-sm">{`by ${author.name}`}</span>
+          <span className="text-sm lg:text-base">{`by ${author.name}`}</span>
         </div>
-        <time className="text-xs opacity-50" dateTime={articleDate}>
+        <time className="text-xs opacity-50 lg:text-sm" dateTime={articleDate}>
           {articleDate}
         </time>
       </div>

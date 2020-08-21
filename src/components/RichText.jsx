@@ -3,12 +3,14 @@ import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const RichText = ({ content }) => {
-  const Paragraph = ({ children }) => <p className="mb-4">{children}</p>
+  const Paragraph = ({ children }) => (
+    <p className="mb-4 lg:text-lg">{children}</p>
+  )
   const Heading1 = ({ children }) => (
-    <h2 className="text-2xl mb-4">{children}</h2>
+    <h2 className="text-2xl mb-4 lg:text-3xl">{children}</h2>
   )
   const Heading2 = ({ children }) => (
-    <h3 className="text-xl mb-4">{children}</h3>
+    <h3 className="text-xl mb-4 lg:text-2xl">{children}</h3>
   )
   const Heading3 = ({ children }) => <h4 className="text-lg">{children}</h4>
   const Heading4 = ({ children }) => (
