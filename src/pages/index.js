@@ -25,6 +25,21 @@ export const pageQuery = graphql`
           childContentfulArticleBodyRichTextNode {
             json
           }
+          author {
+            id
+            websiteUrl
+            twitterUrl
+            name
+            memorableMoments
+            instagramUrl
+            facebookUrl
+            photo {
+              title
+              file {
+                url
+              }
+            }
+          }
           title
           updatedAt
         }

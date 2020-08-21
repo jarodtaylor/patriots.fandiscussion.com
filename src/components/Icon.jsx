@@ -4,6 +4,10 @@ import "../assets/icons/comments-icon.svg"
 import "../assets/icons/article-icon.svg"
 import "../assets/icons/fan-discussion-logo.svg"
 import "../assets/icons/mail-icon.svg"
+import "../assets/icons/facebook-icon.svg"
+import "../assets/icons/twitter-icon2.svg"
+import "../assets/icons/instagram-icon.svg"
+import "../assets/icons/www-icon.svg"
 
 const styles = {
   color: "inherit",

@@ -3,37 +3,24 @@ import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const RichText = ({ content }) => {
-  const Article = ({ children }) => (
-    <article className="article">{children}</article>
-  )
-  const Paragraph = ({ children }) => (
-    <p className="article-paragraph">{children}</p>
-  )
+  const Paragraph = ({ children }) => <p className="mb-4">{children}</p>
   const Heading1 = ({ children }) => (
-    <h1 className="article-heading-1">{children}</h1>
+    <h2 className="text-2xl mb-4">{children}</h2>
   )
   const Heading2 = ({ children }) => (
-    <h2 className="article-heading-2">{children}</h2>
+    <h3 className="text-xl mb-4">{children}</h3>
   )
-  const Heading3 = ({ children }) => (
-    <h3 className="article-heading-3">{children}</h3>
-  )
+  const Heading3 = ({ children }) => <h4 className="text-lg">{children}</h4>
   const Heading4 = ({ children }) => (
-    <h4 className="article-heading-4">{children}</h4>
+    <h5 className="text-base uppercase">{children}</h5>
   )
-  const Heading5 = ({ children }) => (
-    <h5 className="article-heading-5">{children}</h5>
+  const List = ({ children }) => (
+    <ul className="list-disc list-outside pl-4 mb-6">{children}</ul>
   )
-  const Heading6 = ({ children }) => (
-    <h6 className="article-heading-6">{children}</h6>
-  )
-  const List = ({ children }) => <ul className="article-ul">{children}</ul>
   const OrderedList = ({ children }) => (
-    <ol className="article-ol">{children}</ol>
+    <ol className="list-decimal list-outside pl-4 mb-6">{children}</ol>
   )
-  const ListItem = ({ children }) => (
-    <li className="article-list-item">{children}</li>
-  )
+  const ListItem = ({ children }) => <li className="mb-2">{children}</li>
   const BlockQuote = ({ children }) => (
     <blockquote className="article-blockquote">{children}</blockquote>
   )
@@ -49,14 +36,12 @@ const RichText = ({ content }) => {
 
   const richTextOptions = {
     renderNode: {
-      [BLOCKS.DOCUMENT]: (node, children) => <Article>{children}</Article>,
+      [BLOCKS.DOCUMENT]: (node, children) => children,
       [BLOCKS.PARAGRAPH]: (node, children) => <Paragraph>{children}</Paragraph>,
       [BLOCKS.HEADING_1]: (node, children) => <Heading1>{children}</Heading1>,
       [BLOCKS.HEADING_2]: (node, children) => <Heading2>{children}</Heading2>,
       [BLOCKS.HEADING_3]: (node, children) => <Heading3>{children}</Heading3>,
       [BLOCKS.HEADING_4]: (node, children) => <Heading4>{children}</Heading4>,
-      [BLOCKS.HEADING_5]: (node, children) => <Heading5>{children}</Heading5>,
-      [BLOCKS.HEADING_6]: (node, children) => <Heading6>{children}</Heading6>,
       [BLOCKS.UL_LIST]: (node, children) => <List>{children}</List>,
       [BLOCKS.OL_LIST]: (node, children) => (
         <OrderedList>{children}</OrderedList>
@@ -65,9 +50,9 @@ const RichText = ({ content }) => {
       [BLOCKS.QUOTE]: (node, children) => <BlockQuote>{children}</BlockQuote>,
       [BLOCKS.HR]: (node, children) => <HR>{children}</HR>,
       [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
-        const title = node.data.target.fields.title["en-US"]
-        const url = node.data.target.fields.file["en-US"].url
-        return <img src={url} alt={title} />
+        // const title = node.data.target.fields.title["en-US"]
+        // const url = node.data.target.fields.file["en-US"].url
+        // return <img src={url} alt={title} />
       },
       [INLINES.HYPERLINK]: node => {
         const websiteUrl = window.location.hostname
