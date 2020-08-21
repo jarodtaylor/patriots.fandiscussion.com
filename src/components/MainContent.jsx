@@ -44,9 +44,11 @@ const MainContent = ({ data }) => {
             activePageModule === 2 ? "block" : "hidden"
           } lg:block`}
         >
-          <article className="lg:sticky lg:top-0 lg:overflow-scroll lg:h-90vh">
+          <article className="lg:sticky lg:top-0 lg:overflow-scroll">
             <h3 className="text-3xl mb-4">Twitter</h3>
-            <TwitterFeed />
+            <div className="lg:h-90vh">
+              <TwitterFeed />
+            </div>
           </article>
         </aside>
       </div>
