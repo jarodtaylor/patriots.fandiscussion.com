@@ -5,9 +5,9 @@ const pageModules = [
   {
     icon: "article-icon",
   },
-  {
-    icon: "comments-icon",
-  },
+  // {
+  //   icon: "comments-icon",
+  // },
   {
     icon: "twitter-icon",
   },

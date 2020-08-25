@@ -28,8 +28,12 @@ const MainContent = ({ data }) => {
           } lg:block`}
         >
           <Article data={latestArticle} />
+          <article>
+            <h3 className="text-3xl mb-4">Discussion</h3>
+            <Comments title={latestArticle.title} />
+          </article>
         </section>
-        <section
+        {/* <section
           className={`lg:col-span-6 ${
             activePageModule === 1 ? "block" : "hidden"
           } lg:block`}
@@ -38,10 +42,10 @@ const MainContent = ({ data }) => {
             <h3 className="text-3xl mb-4">Discussion</h3>
             <Comments title={latestArticle.title} />
           </article>
-        </section>
+        </section> */}
         <aside
           className={`lg:col-start-7 lg:col-end-10 lg:row-start-1 lg:row-end-3 ${
-            activePageModule === 2 ? "block" : "hidden"
+            activePageModule === 1 ? "block" : "hidden"
           } lg:block`}
         >
           <article className="lg:sticky lg:top-0 lg:pt-2">

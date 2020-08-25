@@ -57,7 +57,8 @@ const RichText = ({ content }) => {
         // return <img src={url} alt={title} />
       },
       [INLINES.HYPERLINK]: node => {
-        const websiteUrl = window.location.hostname
+        // const websiteUrl = window.location.hostname
+        const websiteUrl = "patriots.fandiscussion.com"
         return (
           <a
             href={node.data.uri}
