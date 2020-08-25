@@ -1,17 +1,18 @@
 import React from "react"
 import { graphql } from "gatsby"
-import PageWrapper from "../components/PageWrapper"
-import Header from "../components/Header"
-import MainContent from "../components/MainContent"
-import Footer from "../components/Footer"
+import Layout from "../components/Layout"
+import Article from "../components/Article"
+import Comments from "../components/Comments"
 
 const Home = ({ data, children }) => {
+  const articles = data.allContentfulArticle.edges
+  const latestArticle = articles[0].node
+
   return (
-    <PageWrapper>
-      <Header />
-      <MainContent {...{ data }}>{children}</MainContent>
-      <Footer />
-    </PageWrapper>
+    <Layout data={latestArticle}>
+      <Article data={latestArticle} />
+      <Comments title={latestArticle.title} />
+    </Layout>
   )
 }
 
@@ -41,7 +42,9 @@ export const pageQuery = graphql`
             }
           }
           title
-          updatedAt
+          createdAt(formatString: "MMMM Do, YYYY")
+          id
+          slug
         }
       }
     }

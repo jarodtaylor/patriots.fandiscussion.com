@@ -1,18 +1,15 @@
 import React, { useState } from "react"
 import PageNav from "../components/PageNav"
-import Comments from "./Comments"
 import TwitterFeed from "./TwitterFeed"
-import Article from "./Article"
 
-const MainContent = ({ data }) => {
-  const articles = data.allContentfulArticle.edges
-  const latestArticle = articles[0].node
+const MainContent = ({ data, children }) => {
+  // const articles = data.allContentfulArticle.edges
+  // const latestArticle = articles[0].node
 
   const [activePageModule, setActivePageModule] = useState(0)
 
   const handleClick = index => {
     setActivePageModule(index)
-    console.log(index)
   }
 
   return (
@@ -27,22 +24,8 @@ const MainContent = ({ data }) => {
             activePageModule === 0 ? "block" : "hidden"
           } lg:block`}
         >
-          <Article data={latestArticle} />
-          <article>
-            <h3 className="text-3xl mb-4">Discussion</h3>
-            <Comments title={latestArticle.title} />
-          </article>
+          {children}
         </section>
-        {/* <section
-          className={`lg:col-span-6 ${
-            activePageModule === 1 ? "block" : "hidden"
-          } lg:block`}
-        >
-          <article>
-            <h3 className="text-3xl mb-4">Discussion</h3>
-            <Comments title={latestArticle.title} />
-          </article>
-        </section> */}
         <aside
           className={`lg:col-start-7 lg:col-end-10 lg:row-start-1 lg:row-end-3 ${
             activePageModule === 1 ? "block" : "hidden"

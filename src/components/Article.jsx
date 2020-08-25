@@ -1,14 +1,12 @@
 import React from "react"
 import RichText from "../components/RichText"
 import AuthorCard from "./AuthorCard"
-import { formatDate } from "../utils"
 
 const Article = ({ data }) => {
   const article = data
   const richTextContent = article.childContentfulArticleBodyRichTextNode.json
   const author = article.author
   const authorPhoto = author.photo
-  const articleDate = formatDate(article.updatedAt)
 
   return (
     <article className="article mb-4">
@@ -24,8 +22,11 @@ const Article = ({ data }) => {
           </div>
           <span className="text-sm lg:text-base">{`by ${author.name}`}</span>
         </div>
-        <time className="text-xs opacity-50 lg:text-sm" dateTime={articleDate}>
-          {articleDate}
+        <time
+          className="text-xs opacity-50 lg:text-sm"
+          dateTime={article.createdAt}
+        >
+          {article.createdAt}
         </time>
       </div>
       <div className="mb-8">

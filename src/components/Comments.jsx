@@ -2,7 +2,6 @@ import React from "react"
 import { DiscussionEmbed } from "disqus-react"
 
 const Comments = ({ title }) => {
-  console.log(process.env.GATSBY_DISQUS_NAME)
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: {
@@ -11,7 +10,12 @@ const Comments = ({ title }) => {
     },
   }
 
-  return <DiscussionEmbed {...disqusConfig} />
+  return (
+    <article>
+      <h3 className="text-3xl mb-4">Discussion</h3>
+      <DiscussionEmbed {...disqusConfig} />
+    </article>
+  )
 }
 
 export default Comments

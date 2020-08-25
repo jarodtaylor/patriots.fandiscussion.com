@@ -1,4 +1,53 @@
-var path = require("path")
+const path = require("path")
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const articlePageResponse = await graphql(`
+    query {
+      allContentfulArticle {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
+  articlePageResponse.data.allContentfulArticle.edges.forEach(edge => {
+    createPage({
+      path: `/articles/${edge.node.slug}`,
+      component: path.resolve("./src/templates/article.jsx"),
+      context: {
+        slug: edge.node.slug,
+      },
+    })
+  })
+
+  const articlesByAuthor = await graphql(`
+    query {
+      allContentfulAuthor {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
+
+  articlesByAuthor.data.allContentfulAuthor.edges.forEach(edge => {
+    console.log(edge.node.slug)
+    if (edge.node.slug !== null) {
+      createPage({
+        path: `articles/${edge.node.slug}`,
+        component: path.resolve("./src/templates/authorIndex.jsx"),
+        context: {
+          slug: edge.node.slug,
+        },
+      })
+    }
+  })
+}
 
 exports.onCreateWebpackConfig = ({ actions, getConfig, options }) => {
   const prevConfig = getConfig()
@@ -37,4 +86,10 @@ exports.onCreateWebpackConfig = ({ actions, getConfig, options }) => {
       modules: [path.resolve(__dirname, "src"), "node_modules"],
     },
   })
+}
+
+exports.onCreateNode = ({ node }) => {
+  if (node.internal.type === `MarkdownRemark`) {
+    console.log(node.internal.type)
+  }
 }
