@@ -21,7 +21,7 @@ const MainContent = ({ data }) => {
       className="bg-white min-h-screen lg:p-10 lg:w-11/12 lg:max-w-6xl lg:m-auto lg:rounded-md lg:shadow-2xl"
     >
       <PageNav {...{ activePageModule, handleClick }} />
-      <div className="py-6 px-4 lg:grid lg:grid-cols-9 lg:grid-rows-2 lg:gap-16">
+      <div className="py-6 px-4 lg:grid lg:grid-cols-9 lg:gap-16">
         <section
           className={`lg:col-span-6 ${
             activePageModule === 0 ? "block" : "hidden"
