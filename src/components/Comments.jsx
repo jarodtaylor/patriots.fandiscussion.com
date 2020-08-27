@@ -12,11 +12,11 @@ const Comments = ({ title, slug }) => {
     },
   }
 
-  console.log(
-    `
-    indentifier: ${disqusConfig.config.identifier} | title: ${disqusConfig.config.title} | URL: ${disqusConfig.config.url}
-    `
-  )
+  // console.log(
+  //   `
+  //   indentifier: ${disqusConfig.config.identifier} | title: ${disqusConfig.config.title} | URL: ${disqusConfig.config.url}
+  //   `
+  // )
 
   return (
     <article>
