@@ -5,6 +5,10 @@ module.exports = {
       height: {
         "90vh": "90vh",
       },
+      colors: {
+        "link-blue": "#564dc1",
+        brand: "#01295b",
+      },
     },
     fontSize: {
       xs: ".75rem",
@@ -20,6 +24,9 @@ module.exports = {
       "7xl": "6rem",
     },
   },
-  variants: {},
+  variants: {
+    textColor: ["responsive", "hover", "focus", "group-hover"],
+    borderWidth: ["responsive", "last"],
+  },
   plugins: [],
 }

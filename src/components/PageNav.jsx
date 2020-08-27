@@ -2,6 +2,9 @@ import React from "react"
 import Icon from "./Icon"
 
 const pageModules = [
+  // {
+  //   icon: "home-icon",
+  // },
   {
     icon: "article-icon",
   },

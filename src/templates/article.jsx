@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Article from "../components/Article"
 import Comments from "../components/Comments"
+import MainContent from "../components/MainContent"
 
 export const query = graphql`
   query($slug: String!) {
@@ -35,9 +36,13 @@ export const query = graphql`
 
 const ArticleTemplate = props => {
   return (
-    <Layout data={props.data.contentfulArticle}>
-      <Article data={props.data.contentfulArticle} />
-      <Comments title={props.data.contentfulArticle.title} />
+    <Layout>
+      <MainContent>
+        <div className="pt-4">
+          <Article data={props.data.contentfulArticle} />
+          <Comments title={props.data.contentfulArticle.title} />
+        </div>
+      </MainContent>
     </Layout>
   )
 }

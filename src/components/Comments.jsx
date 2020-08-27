@@ -12,7 +12,9 @@ const Comments = ({ title }) => {
 
   return (
     <article>
-      <h3 className="text-3xl mb-4">Discussion</h3>
+      <h3 id="#comments" className="text-3xl mb-4">
+        Discussion
+      </h3>
       <DiscussionEmbed {...disqusConfig} />
     </article>
   )

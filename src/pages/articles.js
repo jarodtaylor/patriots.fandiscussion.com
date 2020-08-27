@@ -5,17 +5,21 @@ import MainContent from "../components/MainContent"
 import { CommentCount } from "disqus-react"
 
 export const query = graphql`
-  query($slug: String!) {
-    contentfulAuthor(slug: { eq: $slug }) {
-      name
-    }
-    allContentfulArticle(filter: { author: { slug: { eq: $slug } } }) {
+  query {
+    allContentfulArticle {
       edges {
         node {
           title
           slug
           author {
             name
+            slug
+            photo {
+              title
+              file {
+                url
+              }
+            }
           }
           createdAt(formatString: "MMMM Do, YYYY")
         }
@@ -26,7 +30,8 @@ export const query = graphql`
 
 const renderArticleList = articles => {
   return articles.map(article => {
-    const { slug, title, createdAt } = article.node
+    const { slug, title, createdAt, author } = article.node
+    const articleUrl = `/articles/${slug}`
     const disqusConfig = {
       shortname: process.env.GATSBY_DISQUS_NAME,
       config: {
@@ -37,18 +42,32 @@ const renderArticleList = articles => {
     return (
       <li
         key={slug}
-        className="px-2 border-b botder-solid border-gray-300 pt-3 lg:px-0"
+        className="px-2 border-b botder-solid border-gray-300 pt-3"
       >
+        <time
+          className="text-xs opacity-50 block uppercase lg:text-sm"
+          dateTime={createdAt}
+        >
+          {createdAt}
+        </time>
         <h2 className="text-2xl leading-6 mb-2 md:text-3xl md:pt-1 lg:text-4xl lg:mb-4 lg:mt-2">
-          <a href={`/articles/${slug}`}>{title}</a>
+          <a href={articleUrl}>{title}</a>
         </h2>
         <div className="flex pb-3 items-center justify-between">
-          <time
-            className="text-xs opacity-75 block uppercase lg:text-sm"
-            dateTime={createdAt}
-          >
-            {createdAt}
-          </time>
+          <div className="flex items-center">
+            <div className="w-8 mr-2 lg:w-12">
+              <img
+                className="rounded-full"
+                src={author.photo.file.url}
+                alt={author.photo.title}
+              />
+            </div>
+            <a
+              href={`/articles/${author.slug}`}
+              className="text-sm lg:text-base text-black underline"
+            >{`by ${author.name}`}</a>
+          </div>
+
           <div className="uppercase text-sm opacity-75">
             <CommentCount {...disqusConfig}>Placeholder Text</CommentCount>
           </div>
@@ -58,18 +77,16 @@ const renderArticleList = articles => {
   })
 }
 
-const AuthorIndex = props => {
-  const authorName = props.data.contentfulAuthor.name
+const ArticleIndex = props => {
   const authorArticles = props.data.allContentfulArticle.edges
 
   return (
     <Layout>
       <MainContent>
-        <h4 className="text-3xl pt-2 mb-2 pl-2">Articles by {authorName}</h4>
         <ul>{renderArticleList(authorArticles)}</ul>
       </MainContent>
     </Layout>
   )
 }
 
-export default AuthorIndex
+export default ArticleIndex
