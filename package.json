@@ -10,7 +10,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "node bin/deploy.js && ./bin/deploy.sh",
+    "old_deploy": "node bin/deploy.js && ./bin/deploy.sh",
+    "deploy": "gatsby-plugin-s3 deploy --yes && aws cloudfront create-invalidation --distribution-id E25ZPX750FC0RL --paths \"/*\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
@@ -24,8 +25,10 @@
     "@contentful/rich-text-types": "^14.1.1",
     "autoprefixer": "^9.8.6",
     "disqus-react": "^1.0.9",
+    "gatsby-plugin-canonical-urls": "^2.3.10",
     "gatsby-plugin-postcss": "^2.3.11",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+    "gatsby-plugin-s3": "^0.3.5",
     "gatsby-plugin-svg-sprite-loader": "^0.1.5",
     "gatsby-source-filesystem": "^2.3.25",
     "gatsby-transformer-remark": "^2.8.28",

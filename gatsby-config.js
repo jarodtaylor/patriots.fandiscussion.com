@@ -12,6 +12,8 @@ const contentfulConfig = {
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 }
 
+const siteAddress = new URL("https://patriots.fandiscussion.com")
+
 // if you want to use the preview API please define
 // CONTENTFUL_HOST in your environment config
 // the `host` property should map to `preview.contentful.com`
@@ -59,6 +61,20 @@ module.exports = {
             variants: [`400`, `700`],
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: process.env.AWS_BUCKET_NAME,
+        protocol: siteAddress.protocol.slice(0, -1),
+        hostname: siteAddress.hostname,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: siteAddress.href.slice(0, -1),
       },
     },
     {
