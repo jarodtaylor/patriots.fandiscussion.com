@@ -29,7 +29,7 @@ const Home = ({ data, children }) => {
             } lg:block`}
           >
             <Article data={latestArticle} />
-            <Comments title={latestArticle.title} />
+            <Comments title={latestArticle.title} slug={latestArticle.slug} />
           </section>
           <aside
             className={`lg:col-start-7 lg:col-end-10 lg:row-start-1 lg:row-end-3`}

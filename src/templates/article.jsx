@@ -20,6 +20,7 @@ export const query = graphql`
         memorableMoments
         instagramUrl
         facebookUrl
+        slug
         photo {
           title
           file {
@@ -43,7 +44,10 @@ const ArticleTemplate = props => {
           <div className="py-6 lg:grid lg:grid-cols-9 lg:gap-16">
             <section className={`lg:col-span-6 mb-6 lg:mb-0`}>
               <Article data={props.data.contentfulArticle} />
-              <Comments title={props.data.contentfulArticle.title} />
+              <Comments
+                title={props.data.contentfulArticle.title}
+                slug={props.data.contentfulArticle.slug}
+              />
             </section>
             <aside
               className={`lg:col-start-7 lg:col-end-10 lg:row-start-1 lg:row-end-3`}

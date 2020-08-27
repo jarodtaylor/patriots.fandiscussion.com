@@ -1,14 +1,22 @@
 import React from "react"
 import { DiscussionEmbed } from "disqus-react"
 
-const Comments = ({ title }) => {
+const Comments = ({ title, slug }) => {
+  const uniqueURL = `https://patriots.fandiscussion.com/articles/${slug}`
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: {
-      identifier: title,
+      identifier: slug,
       title: title,
+      url: uniqueURL,
     },
   }
+
+  console.log(
+    `
+    indentifier: ${disqusConfig.config.identifier} | title: ${disqusConfig.config.title} | URL: ${disqusConfig.config.url}
+    `
+  )
 
   return (
     <article>

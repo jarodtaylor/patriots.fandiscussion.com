@@ -36,10 +36,9 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   articlesByAuthor.data.allContentfulAuthor.edges.forEach(edge => {
-    console.log(edge.node.slug)
     if (edge.node.slug !== null) {
       createPage({
-        path: `articles/${edge.node.slug}`,
+        path: `/articles/${edge.node.slug}`,
         component: path.resolve("./src/templates/authorIndex.jsx"),
         context: {
           slug: edge.node.slug,

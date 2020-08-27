@@ -31,7 +31,7 @@ const RecentArtitcles = () => {
           className="block border-b border-solid border-gray-300 py-2"
         >
           <a
-            href={`articles/${slug}`}
+            href={`/articles/${slug}`}
             className="group block text-black h-full"
           >
             <h2 className="text-lg group-hover:text-link-blue">{title}</h2>

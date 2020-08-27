@@ -23,7 +23,7 @@ const Article = ({ data }) => {
             />
           </div>
           <a
-            href={`articles/${author.slug}`}
+            href={`/articles/${author.slug}`}
             className="text-sm lg:text-base text-black underline"
           >{`by ${author.name}`}</a>
         </div>

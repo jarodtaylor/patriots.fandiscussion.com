@@ -35,7 +35,7 @@ const renderArticleList = articles => {
     const disqusConfig = {
       shortname: process.env.GATSBY_DISQUS_NAME,
       config: {
-        identifier: title,
+        identifier: slug,
         title: title,
       },
     }

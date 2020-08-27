@@ -30,14 +30,14 @@ const renderArticleList = articles => {
     const disqusConfig = {
       shortname: process.env.GATSBY_DISQUS_NAME,
       config: {
-        identifier: title,
+        identifier: slug,
         title: title,
       },
     }
     return (
       <li
         key={slug}
-        className="px-2 border-b botder-solid border-gray-300 pt-3 lg:px-0"
+        className="border-b botder-solid border-gray-300 pt-3 lg:px-0"
       >
         <h2 className="text-2xl leading-6 mb-2 md:text-3xl md:pt-1 lg:text-4xl lg:mb-4 lg:mt-2">
           <a href={`/articles/${slug}`}>{title}</a>
@@ -65,7 +65,7 @@ const AuthorIndex = props => {
   return (
     <Layout>
       <MainContent>
-        <h4 className="text-3xl pt-2 mb-2 pl-2">Articles by {authorName}</h4>
+        <h4 className="text-3xl pt-2 mb-2">Articles by {authorName}</h4>
         <ul>{renderArticleList(authorArticles)}</ul>
       </MainContent>
     </Layout>
