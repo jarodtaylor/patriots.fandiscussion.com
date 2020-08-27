@@ -9,8 +9,10 @@ const Article = ({ data }) => {
   const authorPhoto = author.photo
 
   return (
-    <article className="article mb-4 pt-4">
-      <h1 className="text-3xl mb-4 leading-10 xl:text-4xl">{article.title}</h1>
+    <article className="article mb-4 pt-4 lg:pt-0">
+      <h1 className="text-3xl mb-4 leading-10 xl:text-4xl lg:leading-tight">
+        {article.title}
+      </h1>
       <div className="flex pb-5 items-center justify-between">
         <div className="flex items-center">
           <div className="w-6 mr-2 lg:w-10">

@@ -19,7 +19,7 @@ const RecentArtitcles = () => {
     }
   `)
 
-  if (data.allContentfulArticle.edges.length < 3) return null
+  if (data.allContentfulArticle.edges.length < 1) return null
 
   const renderArticleList = () => {
     const articles = data.allContentfulArticle.edges
