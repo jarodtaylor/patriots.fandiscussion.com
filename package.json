@@ -11,7 +11,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "old_deploy": "node bin/deploy.js && ./bin/deploy.sh",
-    "deploy": "gatsby-plugin-s3 deploy --yes && aws cloudfront create-invalidation --distribution-id E25ZPX750FC0RL --paths \"/*\"",
+    "deploy": "npm run clean && npm run build && gatsby-plugin-s3 deploy --yes && aws cloudfront create-invalidation --distribution-id E25ZPX750FC0RL --paths \"/*\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
