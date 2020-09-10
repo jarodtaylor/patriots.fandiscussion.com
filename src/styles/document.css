@@ -60,3 +60,7 @@ h6 {
   -moz-osx-font-smoothing: antialiased;
   margin: 0;
 }
+
+hr {
+  margin-bottom: 1.5rem;
+}
