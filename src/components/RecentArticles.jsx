@@ -27,7 +27,7 @@ const RecentArtitcles = () => {
       const { title, createdAt, slug, author } = article.node
       return (
         <li
-          key="slug"
+          key={slug}
           className="block border-b border-solid border-gray-300 py-2"
         >
           <a

@@ -5,7 +5,7 @@ const SocialIcon = ({ url, iconName }) => {
   if (!url) return null
 
   return (
-    <a className="block w-6" href={url}>
+    <a className="inline-block w-6 h-6 mx lg:w-8 lg:h-8" href={url}>
       <span className="block w-6 h-6 lg:w-8 lg:h-8">
         <Icon name={iconName} />
       </span>
@@ -47,7 +47,7 @@ const AuthorCard = ({ author }) => {
     },
     {
       url: websiteUrl,
-      iconName: "website-icon",
+      iconName: "www-icon",
     },
   ]
 
@@ -61,7 +61,7 @@ const AuthorCard = ({ author }) => {
         />
         <h6 className="text-lg w-full text-center pt-2 lg:text-2xl">{name}</h6>
       </div>
-      <div className="flex flex-wrap justify-center w-full py-4 mb-2">
+      <div className="text-center w-full py-4 mb-2">
         {renderSocialIcons(socialUrls)}
       </div>
       <div className="text-center w-full text-sm mb-1 lg:text-base lg:max-w-3xl">
