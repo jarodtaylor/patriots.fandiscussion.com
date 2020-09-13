@@ -5,7 +5,7 @@ const SocialIcon = ({ url, iconName }) => {
   if (!url) return null
 
   return (
-    <a className="inline-block w-6 h-6 mx lg:w-8 lg:h-8" href={url}>
+    <a className="inline-block w-6 h-6 mx-2 lg:w-8 lg:h-8" href={url}>
       <span className="block w-6 h-6 lg:w-8 lg:h-8">
         <Icon name={iconName} />
       </span>
