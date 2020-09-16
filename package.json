@@ -18,9 +18,7 @@
     "gatsby": "^2.24.47",
     "gatsby-source-contentful": "^2.3.37",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
-  },
-  "devDependencies": {
+    "react-dom": "^16.12.0",
     "@contentful/rich-text-react-renderer": "^14.1.1",
     "@contentful/rich-text-types": "^14.1.1",
     "autoprefixer": "^9.8.6",
@@ -38,6 +36,9 @@
     "s3": "^4.4.0",
     "svg-sprite-loader": "^5.0.0",
     "tailwindcss": "^1.6.2"
+  },
+  "devDependencies": {
+    "prettier": "2.0.5",
   },
   "repository": {
     "type": "git",
