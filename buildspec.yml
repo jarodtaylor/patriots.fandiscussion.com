@@ -8,13 +8,13 @@ phases:
       - "npm install -g gatsby"
   pre_build:
     commands:
-      - "npm ci --production"
+      - "npm install"
   build:
     commands:
-      - "npm run-script build"
+      - "npm run build"
   post_build:
     commands:
-      - "npm run-script deploy"
+      - "npm run deploy"
 artifacts:
   base-directory: public
   files:
