@@ -82,5 +82,6 @@ module.exports = {
       options: contentfulConfig,
     },
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-preload-fonts`,
   ],
 }
