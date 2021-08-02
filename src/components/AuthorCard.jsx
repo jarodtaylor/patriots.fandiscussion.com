@@ -15,6 +15,7 @@ const SocialIcon = ({ url, iconName }) => {
 
 const renderSocialIcons = socialUrls => {
   return socialUrls.map(site => {
+    if (!site.url) return
     return (
       <SocialIcon key={site.iconName} url={site.url} iconName={site.iconName} />
     )
@@ -34,19 +35,19 @@ const AuthorCard = ({ author }) => {
 
   const socialUrls = [
     {
-      url: facebookUrl,
+      url: facebookUrl || "",
       iconName: "facebook-icon",
     },
     {
-      url: instagramUrl,
+      url: instagramUrl || "",
       iconName: "instagram-icon",
     },
     {
-      url: twitterUrl,
+      url: twitterUrl || "",
       iconName: "twitter-icon2",
     },
     {
-      url: websiteUrl,
+      url: websiteUrl || "",
       iconName: "www-icon",
     },
   ]
@@ -66,7 +67,7 @@ const AuthorCard = ({ author }) => {
       </div>
       <div className="text-center w-full text-sm mb-1 lg:text-base lg:max-w-3xl">
         <h6 className="uppercase pb-2 lg:text-lg">Memorable Sports Moments</h6>
-        {memorableMoments.join(", ")}
+        {memorableMoments && memorableMoments.join(", ")}
       </div>
     </article>
   )
