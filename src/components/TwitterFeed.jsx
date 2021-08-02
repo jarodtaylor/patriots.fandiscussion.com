@@ -15,6 +15,7 @@ const TwitterFeed = () => {
           options={{
             chrome: "noheader nofooter",
             "aria-polite": "rude",
+            id: "profile:twitterdev",
           }}
         />
       </div>
