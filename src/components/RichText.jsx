@@ -61,7 +61,7 @@ const RichText = ({ content }) => {
         const websiteUrl = "patriots.fandiscussion.com"
         return (
           <a
-            href={node.data.uri}
+            href={node.data.uri.trim()}
             className="article-link"
             target={`${
               node.data.uri.startsWith(websiteUrl) ? "_self" : "_blank"
