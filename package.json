@@ -36,7 +36,8 @@
     "prettier": "2.0.5",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-twitter-widgets": "^1.9.5",
+    "react-twitter-embed": "^4.0.4",
+    "react-twitter-widgets": "^1.11.0",
     "s3": "^4.4.0",
     "svg-sprite-loader": "^5.0.0",
     "tailwindcss": "^1.9.6"

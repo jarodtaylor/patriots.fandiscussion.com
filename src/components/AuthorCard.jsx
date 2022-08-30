@@ -15,7 +15,7 @@ const SocialIcon = ({ url, iconName }) => {
 
 const renderSocialIcons = socialUrls => {
   return socialUrls.map(site => {
-    if (!site.url) return
+    if (!site.url) return ""
     return (
       <SocialIcon key={site.iconName} url={site.url} iconName={site.iconName} />
     )
