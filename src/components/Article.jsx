@@ -5,8 +5,35 @@ import AuthorCard from "./AuthorCard"
 const Article = ({ data }) => {
   const article = data
   const richTextContent = article.childContentfulArticleBodyRichTextNode.json
+  const gamePredictions =
+    article.childrenContentfulArticleGamePredictionsJsonNode
   const author = article.author
   const authorPhoto = author.photo
+
+  const renderPredictions = predictions => {
+    return (
+      <>
+        <h2 className="text-2xl mb-4 lg:text-3xl">Thoughts from the board</h2>
+        {predictions.map(prediction => {
+          return (
+            <div key={prediction.id}>
+              <h3 className="text-xl mb-4 lg:text-2xl">
+                {prediction.screenName}
+              </h3>
+              <p className="mb-4 lg:text-lg">{prediction.gameAnalysis}</p>
+              <p className="mb-4 lg:text-lg">
+                {prediction.whoWins} win {prediction.scorePrediction}
+              </p>
+              <p className="mb-4 lg:text-lg">
+                <b className="article-bold">Bold Prediction</b>:{" "}
+                {prediction.boldPrediction}
+              </p>
+            </div>
+          )
+        })}
+      </>
+    )
+  }
 
   return (
     <article className="article mb-4 pt-4 lg:pt-0">
@@ -36,6 +63,9 @@ const Article = ({ data }) => {
       </div>
       <div className="mb-8">
         <RichText content={richTextContent} />
+        {gamePredictions &&
+          gamePredictions.length > 0 &&
+          renderPredictions(gamePredictions)}
       </div>
       {/* <h5 className="text-xl mb-3">About the Author</h5> */}
       <AuthorCard {...{ author }} />

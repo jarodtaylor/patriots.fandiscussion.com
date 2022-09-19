@@ -59,6 +59,14 @@ export const pageQuery = graphql`
           childContentfulArticleBodyRichTextNode {
             json
           }
+          childrenContentfulArticleGamePredictionsJsonNode {
+            gameAnalysis
+            screenName
+            scorePrediction
+            boldPrediction
+            whoWins
+            id
+          }
           author {
             id
             websiteUrl
