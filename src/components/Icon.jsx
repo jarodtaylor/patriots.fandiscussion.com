@@ -17,10 +17,12 @@ const styles = {
   display: "block",
 }
 
-export default ({ name, className }) => {
+const Icon = ({ name, className }) => {
   return (
     <svg className={className} style={styles}>
       <use xlinkHref={`#${name}`} />
     </svg>
   )
 }
+
+export default Icon

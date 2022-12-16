@@ -83,5 +83,6 @@ module.exports = {
     },
     `gatsby-plugin-postcss`,
     `gatsby-plugin-preload-fonts`,
+    `gatsby-plugin-image`,
   ],
 }

@@ -9,8 +9,8 @@ import RecentArticles from "../components/RecentArticles"
 export const query = graphql`
   query($slug: String!) {
     contentfulArticle(slug: { eq: $slug }) {
-      childContentfulArticleBodyRichTextNode {
-        json
+      body {
+        raw
       }
       author {
         id

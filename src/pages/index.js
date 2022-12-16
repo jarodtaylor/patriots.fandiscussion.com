@@ -56,8 +56,8 @@ export const pageQuery = graphql`
     allContentfulArticle {
       edges {
         node {
-          childContentfulArticleBodyRichTextNode {
-            json
+          body {
+            raw
           }
           childrenContentfulArticleGamePredictionsJsonNode {
             gameAnalysis

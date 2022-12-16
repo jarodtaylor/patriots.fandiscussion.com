@@ -1,6 +1,7 @@
 import React from "react"
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+// import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 
 const RichText = ({ content }) => {
   const Paragraph = ({ children }) => (
@@ -51,11 +52,11 @@ const RichText = ({ content }) => {
       [BLOCKS.LIST_ITEM]: (node, children) => <ListItem>{children}</ListItem>,
       [BLOCKS.QUOTE]: (node, children) => <BlockQuote>{children}</BlockQuote>,
       [BLOCKS.HR]: (node, children) => <HR>{children}</HR>,
-      [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
-        const title = node.data.target.fields.title["en-US"]
-        const url = node.data.target.fields.file["en-US"].url
-        return <img src={url} alt={title} />
-      },
+      // [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
+      //   const title = node.data.target.fields.title["en-US"]
+      //   const url = node.data.target.fields.file["en-US"].url
+      //   return <img src={url} alt={title} />
+      // },
       [INLINES.HYPERLINK]: node => {
         // const websiteUrl = window.location.hostname
         const websiteUrl = "patriots.fandiscussion.com"
@@ -83,7 +84,7 @@ const RichText = ({ content }) => {
     },
   }
 
-  return documentToReactComponents(content, richTextOptions)
+  return renderRichText(content, richTextOptions)
 }
 
 export default RichText

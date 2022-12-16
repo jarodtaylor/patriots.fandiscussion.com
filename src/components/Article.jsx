@@ -4,7 +4,7 @@ import AuthorCard from "./AuthorCard"
 
 const Article = ({ data }) => {
   const article = data
-  const richTextContent = article.childContentfulArticleBodyRichTextNode.json
+  const richTextContent = article.body
   const gamePredictions =
     article.childrenContentfulArticleGamePredictionsJsonNode
   const author = article.author
