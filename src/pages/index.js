@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 import MainContent from "../components/MainContent"
 import Article from "../components/Article"
 import Comments from "../components/Comments"
-import TwitterFeedManual from "../components/TwitterFeedManual"
+import TwitterFeed from "../components/TwitterFeed"
 import PageNav from "../components/PageNav"
 import RecentArticles from "../components/RecentArticles"
 
@@ -40,7 +40,7 @@ const Home = ({ data, children }) => {
                 activePageModule === 1 ? "block" : "hidden"
               } lg:block`}
             >
-              <TwitterFeedManual />
+              <TwitterFeed />
             </div>
           </aside>
         </div>

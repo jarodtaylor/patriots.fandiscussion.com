@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useLayoutEffect } from "react"
 
 function App() {
   useEffect(() => {
@@ -36,6 +36,11 @@ function App() {
       </div>
     </article>
   )
+
+  useLayoutEffect(() => {
+    console.log("uselayouteffect invoked")
+    return
+  })
 }
 
 export default App
