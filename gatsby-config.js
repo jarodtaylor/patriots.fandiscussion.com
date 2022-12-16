@@ -63,14 +63,14 @@ module.exports = {
     //     ],
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-s3`,
-      options: {
-        bucketName: process.env.AWS_BUCKET_NAME,
-        protocol: siteAddress.protocol.slice(0, -1),
-        hostname: siteAddress.hostname,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-s3`,
+    //   options: {
+    //     bucketName: process.env.AWS_BUCKET_NAME,
+    //     protocol: siteAddress.protocol.slice(0, -1),
+    //     hostname: siteAddress.hostname,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
