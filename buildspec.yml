@@ -2,7 +2,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18
+      nodejs: 16
     commands:
       - "touch .npmignore"
       - "npm_config_user=root npm install -g gatsby"
