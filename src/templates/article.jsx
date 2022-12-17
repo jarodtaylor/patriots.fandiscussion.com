@@ -7,10 +7,18 @@ import MainContent from "../components/MainContent"
 import RecentArticles from "../components/RecentArticles"
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     contentfulArticle(slug: { eq: $slug }) {
       body {
         raw
+      }
+      childrenContentfulArticleGamePredictionsJsonNode {
+        gameAnalysis
+        screenName
+        scorePrediction
+        boldPrediction
+        whoWins
+        id
       }
       author {
         id
