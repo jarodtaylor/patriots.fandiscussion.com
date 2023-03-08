@@ -28,6 +28,11 @@ const RichText = ({ content }) => {
     <blockquote className="article-blockquote">{children}</blockquote>
   )
   const HR = ({ children }) => <hr className="article-hr" />
+  const Table = ({ children }) => (
+    <table className="data-table-zebra">{children}</table>
+  )
+  const TableRow = ({ children }) => <tr>{children}</tr>
+  const TableCell = ({ children }) => <td>{children}</td>
   const Bold = ({ children }) => <b className="article-bold">{children}</b>
   const Italic = ({ children }) => <i className="article-italic">{children}</i>
   const Underline = ({ children }) => (
@@ -52,6 +57,42 @@ const RichText = ({ content }) => {
       [BLOCKS.LIST_ITEM]: (node, children) => <ListItem>{children}</ListItem>,
       [BLOCKS.QUOTE]: (node, children) => <BlockQuote>{children}</BlockQuote>,
       [BLOCKS.HR]: (node, children) => <HR>{children}</HR>,
+      [BLOCKS.TABLE]: (node, children) => <table>{children}</table>,
+      [BLOCKS.TABLE_ROW]: (node, children) => {
+        if (children.every(node => node.type === "th")) {
+          // all children are header cells, so we should wrap the row
+          // with a <thead /> tag
+          return (
+            <thead>
+              <tr>{children}</tr>
+            </thead>
+          )
+        } else {
+          // not a header row, so we can render an ordinary <tr />
+          return <tr>{children}</tr>
+        }
+      },
+      // [BLOCKS.TABLE_CELL]: (node, children) => {
+      //   // console.log()
+      //   // children.every((node) => {
+      //   //   debugger;
+      //   // })
+      //   //data-column={node.content[0].content[0].value}
+      //   return (
+      //     <td data-column={node.content[0].content[0].value}>{children}</td>
+      //   )
+      // },
+      [BLOCKS.TABLE_HEADER_CELL]: (node, children) => {
+        // console.log()
+        // children.every((node) => {
+        //   debugger;
+        // })
+        //data-column={node.content[0].content[0].value}
+        return <td>{children}</td>
+      },
+      // BLOCKS.TABLE_ROW
+      // BLOCKS.TABLE_CELL
+      // BLOCKS.TABLE_HEADER_CELL
       // [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
       //   const title = node.data.target.fields.title["en-US"]
       //   const url = node.data.target.fields.file["en-US"].url

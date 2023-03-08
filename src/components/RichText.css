@@ -3,6 +3,38 @@
 }
 
 .article ul li p,
-.artcile ol li p {
+.article ol li p {
   margin-bottom: 0;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+/* Zebra striping */
+tr:nth-of-type(odd) {
+  background: #eee;
+}
+
+th {
+  background: #3498db;
+  color: white;
+  font-weight: bold;
+}
+
+td,
+th {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+}
+
+table td p {
+  font-size: 1rem !important;
+  margin: 0 !important;
 }
