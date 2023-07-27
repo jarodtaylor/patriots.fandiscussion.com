@@ -27,7 +27,8 @@ function App() {
       <div className="lg:h-90vh lg:overflow-scroll">
         <a
           className="twitter-timeline"
-          href="https://twitter.com/jarodtaylor/lists/patriots-news?ref_src=twsrc%5Etfw"
+          // href="https://twitter.com/jarodtaylor/lists/patriots-news?ref_src=twsrc%5Etfw"
+          href="https://twitter.com/patspulpit?ref_src=twsrc%5Etfw"
           data-chrome="nofooter noborders noheader"
           data-aria-polite="rude"
         >
