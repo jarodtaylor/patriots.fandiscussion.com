@@ -64,3 +64,9 @@ h6 {
 hr {
   margin-bottom: 1.5rem;
 }
+
+#disqus_thread > iframe:first-of-type,
+#disqus_recommendations
+{
+  display: none!important;
+}
