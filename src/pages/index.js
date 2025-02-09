@@ -24,14 +24,14 @@ const Home = ({ data, children }) => {
       <MainContent>
         <div className="py-6 lg:grid lg:grid-cols-9 lg:gap-16">
           <section
-            className={`lg:col-span-9 mb-6 lg:mb-0 ${
+            className={`lg:col-span-6 mb-6 lg:mb-0 ${
               activePageModule === 0 ? "block" : "hidden"
             } lg:block`}
           >
             <Article data={latestArticle} />
             <Comments title={latestArticle.title} slug={latestArticle.slug} />
           </section>
-          {/* <aside
+          <aside
             className={`lg:col-start-7 lg:col-end-10 lg:row-start-1 lg:row-end-3`}
           >
             <RecentArticles />
@@ -40,9 +40,9 @@ const Home = ({ data, children }) => {
                 activePageModule === 1 ? "block" : "hidden"
               } lg:block`}
             >
-              <TwitterFeedManual />
+              {/* <TwitterFeedManual /> */}
             </div>
-          </aside> */}
+          </aside>
         </div>
       </MainContent>
     </Layout>
