@@ -5,17 +5,25 @@ import { renderRichText } from "gatsby-source-contentful/rich-text"
 
 const RichText = ({ content }) => {
   const Paragraph = ({ children }) => (
-    <p className="mb-4 lg:text-lg">{children}</p>
+    <p className="mb-4 text-base">{children}</p>
   )
   const Heading1 = ({ children }) => (
-    <h2 className="text-2xl mb-4 lg:text-3xl">{children}</h2>
+    <h2 className="text-3xl mb-4 lg:text-4xl">{children}</h2>
   )
   const Heading2 = ({ children }) => (
-    <h3 className="text-xl mb-4 lg:text-2xl">{children}</h3>
+    <h3 className="text-2xl mb-4 lg:text-3xl">{children}</h3>
   )
-  const Heading3 = ({ children }) => <h4 className="text-lg">{children}</h4>
+  const Heading3 = ({ children }) => (
+    <h4 className="text-xl lg:text-2xl">{children}</h4>
+  )
   const Heading4 = ({ children }) => (
-    <h5 className="text-base uppercase">{children}</h5>
+    <h5 className="text-lg lg:text-xl">{children}</h5>
+  )
+  const Heading5 = ({ children }) => (
+    <h6 className="text-base lg:text-lg">{children}</h6>
+  )
+  const Heading6 = ({ children }) => (
+    <h6 className="text-base uppercase">{children}</h6>
   )
   const List = ({ children }) => (
     <ul className="list-disc list-outside pl-4 mb-6">{children}</ul>
@@ -50,6 +58,8 @@ const RichText = ({ content }) => {
       [BLOCKS.HEADING_2]: (node, children) => <Heading2>{children}</Heading2>,
       [BLOCKS.HEADING_3]: (node, children) => <Heading3>{children}</Heading3>,
       [BLOCKS.HEADING_4]: (node, children) => <Heading4>{children}</Heading4>,
+      [BLOCKS.HEADING_5]: (node, children) => <Heading5>{children}</Heading5>,
+      [BLOCKS.HEADING_6]: (node, children) => <Heading6>{children}</Heading6>,
       [BLOCKS.UL_LIST]: (node, children) => <List>{children}</List>,
       [BLOCKS.OL_LIST]: (node, children) => (
         <OrderedList>{children}</OrderedList>
